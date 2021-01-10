@@ -1,0 +1,181 @@
+/** @format */
+
+html {
+	--background-color: rgb(27, 26, 26);
+	--color: #75d375;
+	--text: #141414;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: var(--background-color);
+}
+
+* {
+	font-family: monospace;
+	color: var(--color);
+	outline: none;
+}
+
+h1 {
+	font-size: 40px;
+	border-bottom: 6px var(--color) dashed;
+	background-color: var(--text);
+	text-align: center;
+	margin: auto;
+	font-weight: 900;
+	width: auto;
+	height: 50px;
+	user-select: none;
+	padding: 10px;
+	/* text-shadow: black 1px 0px; */
+}
+
+h1::selection {
+	-webkit-user-select: none;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	text-align: left;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	margin: auto;
+}
+
+.alert_container {
+	opacity: 0;
+	background-color: #80808080;
+	width: 0%;
+	height: 50px;
+	margin-bottom: 50px;
+	margin-left: -8px;
+	border: 3px solid var(--text);
+	border-radius: 10px;
+	display: inline-block;
+	font: inherit;
+	font-size: 30px;
+	text-align: left;
+	color: var(--text);
+	padding: 10px;
+	text-overflow: clip;
+	vertical-align: middle;
+	line-height: 175%;
+	transition: 0.5s ease-in-out opacity, 0.5s ease-in-out width, 0.5s ease-in-out background;
+	outline: none;
+	/* user-select: none; */
+}
+
+.alert_container::selection {
+	-webkit-user-select: none;
+}
+
+.alert_container * {
+	color: var(--text);
+}
+
+form {
+	opacity: 1;
+	display: flex;
+	flex-flow: row wrap;
+	height: auto;
+	overflow: hidden;
+	padding: 5px;
+	transition: 0.5s ease-in-out opacity, 0.5s ease-in-out height;
+}
+
+form > * {
+	margin: 5px 10px;
+	flex: 1 1 auto;
+}
+
+input[type="text"] {
+	font: inherit;
+	flex: 10 4 auto;
+	font-size: 25px;
+	padding: 12px 20px;
+	height: 30px;
+	border: 3px var(--color) solid;
+	background-color: var(--color);
+	border-radius: 10px;
+	color: var(--text);
+	transition: ease-in-out border 0.3s, ease-in-out background-color 0.3s, ease-in-out color 0.3s;
+}
+
+input[type="text"]:focus {
+	border: 3px var(--color) dashed;
+	background-color: var(--text);
+	color: var(--color);
+}
+
+input[type="text"]::placeholder {
+	color: #000000fb;
+}
+
+input[type="submit"] {
+	position: relative;
+	cursor: pointer;
+	align-self: end;
+	float: right;
+	background-color: var(--color);
+	border: rgba(255, 255, 255, 0) solid 0px;
+	outline: var(--text);
+	color: var(--text);
+	font: inherit;
+	height: 60px;
+	font-size: 20px;
+	padding: 10px;
+	border-radius: 3px;
+	transition: ease-in-out outline 0.3s, ease-in-out background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+	outline: var(--color) 3px solid;
+	outline-style: dashed;
+	background-color: var(--color);
+}
+
+input[type="submit"]:disabled {
+	cursor: not-allowed;
+	background-color: gray;
+	outline: none;
+}
+
+textarea {
+	opacity: 0;
+	position: absolute;
+	margin-top: 40px;
+	width: calc(100% - 26px);
+	left: 0px;
+	height: 150px;
+	text-overflow: clip;
+	overflow: hidden;
+	border: 3px solid var(--color);
+	border-radius: 5px;
+	background: var(--text);
+	color: var(--color);
+	padding: 10px;
+	font-size: 18px;
+	outline: none;
+	resize: none;
+	cursor: auto;
+	transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 800px) {
+	.center {
+		width: 100vw;
+	}
+
+	textarea {
+		font-size: 16px;
+		margin: auto;
+	}
+}
